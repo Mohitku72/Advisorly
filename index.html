@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advisorly - Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- LOGIN PAGE -->
+    <section id="loginPage" class="login-page">
+        <div class="login-box">
+            <div class="brand-icon">🎓</div>
+            <h1>Advisorly</h1>
+            <p class="subtitle">Academic Advising Portal</p>
+
+            <h2>Welcome Back!</h2>
+            <p class="muted">Login to your student account</p>
+
+            <form id="loginForm">
+                <label for="loginEmail">Email Address</label>
+                <input type="email" id="loginEmail"
+                    placeholder="Enter your email" required>
+
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword"
+                    placeholder="Enter your password" required>
+
+                <button type="submit" class="primary-btn">
+                    Login
+                </button>
+            </form>
+
+            <p id="loginMessage" role="status"></p>
+
+            <div class="demo-info">
+                <strong>Demo Login</strong>
+                <p>Email: student@lpu.in</p>
+                <p>Password: Lpu@123</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN DASHBOARD -->
+    <div id="dashboardPage" class="hidden">
+
+        <header>
+            <div class="logo">🎓 Advisorly</div>
+
+            <nav>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#book">Book Appointment</a>
+                <a href="#appointments">My Appointments</a>
+            </nav>
+
+            <button id="logoutBtn" class="logout-btn">
+                Logout
+            </button>
+        </header>
+
+        <main class="container">
+
+            <section class="welcome" id="dashboard">
+                <div>
+                    <p class="small-text">STUDENT PORTAL</p>
+                    <h1>Academic Advising</h1>
+                    <p>Welcome, <span id="studentDisplay"></span>!</p>
+                    <p>Schedule meetings with your academic advisors easily.</p>
+                </div>
+                <div class="welcome-icon">🎓</div>
+            </section>
+
+            <section class="stats">
+                <div class="stat-card">
+                    <span>Total Appointments</span>
+                    <h2 id="totalCount">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>Upcoming Appointments</span>
+                    <h2 id="upcomingCount">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>Available Advisors</span>
+                    <h2>3</h2>
+                </div>
+            </section>
+
+            <section class="content-grid">
+
+                <!-- BOOKING FORM -->
+                <div class="panel" id="book">
+                    <h2>Book an Appointment</h2>
+                    <p class="muted">Fill in the details to schedule a meeting.</p>
+
+                    <form id="bookingForm">
+
+                        <label for="studentName">Student Name</label>
+                        <input type="text" id="studentName"
+                            placeholder="Enter your name" required>
+
+                        <label for="advisor">Select Advisor</label>
+                        <select id="advisor" required>
+                            <option value="">Choose an advisor</option>
+                            <option value="Dr. Rahul Sharma">Dr. Rahul Sharma</option>
+                            <option value="Dr. Priya Singh">Dr. Priya Singh</option>
+                            <option value="Dr. Amit Verma">Dr. Amit Verma</option>
+                        </select>
+
+                        <label for="date">Appointment Date</label>
+                        <input type="date" id="date" required>
+
+                        <label for="time">Select Time</label>
+                        <select id="time" required>
+                            <option value="">Choose a time slot</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="02:00 PM">02:00 PM</option>
+                            <option value="03:00 PM">03:00 PM</option>
+                        </select>
+
+                        <label for="purpose">Purpose of Meeting</label>
+                        <textarea id="purpose"
+                            placeholder="Describe your purpose..."
+                            required></textarea>
+
+                        <button type="submit" class="primary-btn">
+                            Book Appointment
+                        </button>
+                    </form>
+
+                    <p id="message" role="status"></p>
+                </div>
+
+                <!-- APPOINTMENT LIST -->
+                <div class="panel" id="appointments">
+                    <h2>My Appointments</h2>
+                    <p class="muted">Your scheduled meetings appear here.</p>
+
+                    <div id="appointmentList">
+                        <p class="empty">No appointments booked yet.</p>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Advisorly | Academic Advising Appointment Portal</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
